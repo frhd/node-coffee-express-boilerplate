@@ -1,0 +1,52 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "A node server to all the stuff you wanna do.",
+  "main": "index.js",
+  "scripts": {
+    "blanket": {
+      "pattern": "//^((?!(node_modules|test)).)*$/",
+      "data-cover-flags": {
+        "debug": false
+      }
+    },
+    "test": "mocha --harmony",
+    "pretest": "npm run compile",
+    "prepublish": "npm run compile",
+    "compile": "coffee --compile --output lib/ src/",
+    "start": "npm run compile && DEBUG=me.frhd.server node index.js",
+    "travis-cov": {
+      "threshold": 90
+    }
+  },
+  "dependencies": {
+    "async": "2.1.2",
+    "body-parser": "1.15.2",
+    "connect-redis": "3.1.0",
+    "cookie-parser": "1.4.3",
+    "debug": "^2.3.2",
+    "errorhandler": "1.5.0",
+    "express": "4.14.0",
+    "express-authorization": "1.0.0",
+    "express-session": "1.14.2",
+    "express-unless": "0.3.0",
+    "lodash.set": "4.3.2"
+  },
+  "devDependencies": {
+    "co": "*",
+    "co-mocha": "*",
+    "coffee-script": "*",
+    "mocha": "*",
+    "should": "*",
+    "connect-assets": "*"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": [
+    "node"
+  ]
+}

@@ -1,0 +1,6 @@
+--require should
+--require coffee-script/register
+--reporter spec
+--compilers coffee:coffee-script/register
+--require co-mocha
+--timeout 60000
